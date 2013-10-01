@@ -17,3 +17,7 @@ nchar(5:14)
 # https://bitbucket.org/scurra71/education/src/141221a983b288459df066b8f20b57759a15f319/coursera/week2/corr.R
 # complete.cases()
 # Return a logical vector indicating which cases are complete, i.e., have no missing values
+
+complete.cases(airquality)
+
+#########################################

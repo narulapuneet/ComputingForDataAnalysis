@@ -1,0 +1,17 @@
+
+gwtwd() 
+list.files(getwd())
+
+
+##########################################
+
+# nchar()   #number of characters
+
+string <- c("Kevin")
+nchar(string)
+
+nchar(14596)
+
+nchar(5:14)
+
+#########################################

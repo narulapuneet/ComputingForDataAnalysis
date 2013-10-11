@@ -22,3 +22,8 @@ airqual.comp <- airquality[complete.cases(airquality)]
 
 #################################################
 # PArt 3 The order() function
+# Order cars in the mtcars data frame by horsepower
+mtcars[order(mtcars$hp),]
+
+# Order the car by numbers of cylinder, then by alphetical order
+mtcars[order(mtcars$cyl,rownames(mtcars)),]

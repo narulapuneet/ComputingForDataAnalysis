@@ -83,22 +83,31 @@ UseCols <- c(1,VarCol)
 
 Hosp <- Hosp[,UseCols]
 ###################################
+# Part 4a Clean up data set
+
+#Turn into integers. Suppress coercion warnings
+# get rid of incomplete cases
+
 suppressWarnings(Hosp[,2] <- as.numeric(Hosp[,2]))
 Hosp <- Hosp[complete.cases(Hosp),]
+
+###################################
+# Part 4b Clean up data set
+
+# mananging best / worst inputs
+# worst = last row
 
 if (num == "best") {num = 1}
 if (num == "worst") {num = nrow(Hosp)}
 
 ####################################
-# Part 4a location of minimum value or values
+# Part 5
 
-# which(Hosp[,2] == min(Hosp[,2])
+# Order by outcome (col 2), then by name of hospital (col 1)
+OrderedHosp <- Hosp[order(Hosp[,2],Hosp[,1]), ]
 
-####################################
-# Part 4b Extract case of minima location 
+# Part 6 Return Answer
 
-OrderedHosp <- Hosp[order(Hosp[,2]), ]
-
-return (OrderedHosp[ranking,]$Hosp.Name)
+return (OrderedHosp[num,]$Hosp.Name)
                                      
   }  

@@ -1,4 +1,3 @@
-
 rankall <- function(outcome, num = "best") {
 Hosp<-read.csv("outcome-of-care-measures.csv",colClasses = "character")
 
@@ -46,7 +45,7 @@ suppressWarnings(Hosp[,5] <- as.numeric(Hosp[,5]))
 #Part 4 : Generate a list of states
 StatesList <- as.character(unique(Hosp[,2]))
 
-StateList = sort(StateList)
+StatesList = sort(StatesList)
 
 
 #####################################
@@ -81,7 +80,7 @@ RankHosp=character()
 ####################################
 # Part 8
 #Populate the character vectors from Part 7
-for (state in StateList)
+for (state in StatesList)
    {
    Hosp2 <- Hosp[Hosp$State==state,]
    Hosp2 <- Hosp2[complete.cases(Hosp2),]
@@ -101,6 +100,6 @@ for (state in StateList)
 ####################################
 # Part 9
 # Construct a data frame from character vectors
-RankFrame=data.frame(hospital=RankHosp,state=StateList)
+RankFrame=data.frame(hospital=RankHosp,state=StatesList)
 return(RankFrame)
 }
